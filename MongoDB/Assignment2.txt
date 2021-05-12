@@ -1,0 +1,651 @@
+1)use db.zipcodes.find() to filter only the result where city name ATLANTA and state is GA.
+
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.find({ city :"ATLANTA", state :"GA"}).pretty()
+{
+	"_id" : "30303",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.388846,
+		33.752504
+	],
+	"pop" : 1845,
+	"state" : "GA"
+}
+{
+	"_id" : "30305",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.385145,
+		33.831963
+	],
+	"pop" : 19122,
+	"state" : "GA"
+}
+{
+	"_id" : "30306",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.351418,
+		33.786027
+	],
+	"pop" : 20081,
+	"state" : "GA"
+}
+{
+	"_id" : "30307",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.335957,
+		33.769138
+	],
+	"pop" : 16330,
+	"state" : "GA"
+}
+{
+	"_id" : "30308",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.375744,
+		33.771839
+	],
+	"pop" : 8549,
+	"state" : "GA"
+}
+{
+	"_id" : "30309",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.388338,
+		33.798407
+	],
+	"pop" : 14766,
+	"state" : "GA"
+}
+{
+	"_id" : "30310",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.423173,
+		33.727849
+	],
+	"pop" : 34017,
+	"state" : "GA"
+}
+{
+	"_id" : "30311",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.470219,
+		33.722957
+	],
+	"pop" : 34880,
+	"state" : "GA"
+}
+{
+	"_id" : "30312",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.378125,
+		33.746749
+	],
+	"pop" : 17683,
+	"state" : "GA"
+}
+{
+	"_id" : "30313",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.39352,
+		33.76825
+	],
+	"pop" : 8038,
+	"state" : "GA"
+}
+{
+	"_id" : "30314",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.425546,
+		33.756103
+	],
+	"pop" : 26649,
+	"state" : "GA"
+}
+{
+	"_id" : "30315",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.380771,
+		33.705062
+	],
+	"pop" : 41061,
+	"state" : "GA"
+}
+{
+	"_id" : "30316",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.333913,
+		33.721686
+	],
+	"pop" : 34668,
+	"state" : "GA"
+}
+{
+	"_id" : "30317",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.31685,
+		33.749788
+	],
+	"pop" : 16395,
+	"state" : "GA"
+}
+{
+	"_id" : "30318",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.445432,
+		33.786454
+	],
+	"pop" : 53894,
+	"state" : "GA"
+}
+{
+	"_id" : "30319",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.335091,
+		33.868728
+	],
+	"pop" : 32138,
+	"state" : "GA"
+}
+{
+	"_id" : "30324",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.354867,
+		33.820609
+	],
+	"pop" : 15044,
+	"state" : "GA"
+}
+{
+	"_id" : "30326",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.358232,
+		33.848168
+	],
+	"pop" : 125,
+	"state" : "GA"
+}
+{
+	"_id" : "30327",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.419966,
+		33.862723
+	],
+	"pop" : 18467,
+	"state" : "GA"
+}
+{
+	"_id" : "30329",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.321402,
+		33.823555
+	],
+	"pop" : 17013,
+	"state" : "GA"
+}
+Type "it" for more
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> 
+
+
+2) use  db.zipcodes.aggregate  with $match to do the same as  above.
+
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate(
+... [
+... {
+... $match : { $and : [ {city:"ATLANTA"},{state:"GA"}]}
+... }
+... ]
+... )
+{ "_id" : "30303", "city" : "ATLANTA", "loc" : [ -84.388846, 33.752504 ], "pop" : 1845, "state" : "GA" }
+{ "_id" : "30305", "city" : "ATLANTA", "loc" : [ -84.385145, 33.831963 ], "pop" : 19122, "state" : "GA" }
+{ "_id" : "30306", "city" : "ATLANTA", "loc" : [ -84.351418, 33.786027 ], "pop" : 20081, "state" : "GA" }
+{ "_id" : "30307", "city" : "ATLANTA", "loc" : [ -84.335957, 33.769138 ], "pop" : 16330, "state" : "GA" }
+{ "_id" : "30308", "city" : "ATLANTA", "loc" : [ -84.375744, 33.771839 ], "pop" : 8549, "state" : "GA" }
+{ "_id" : "30309", "city" : "ATLANTA", "loc" : [ -84.388338, 33.798407 ], "pop" : 14766, "state" : "GA" }
+{ "_id" : "30310", "city" : "ATLANTA", "loc" : [ -84.423173, 33.727849 ], "pop" : 34017, "state" : "GA" }
+{ "_id" : "30311", "city" : "ATLANTA", "loc" : [ -84.470219, 33.722957 ], "pop" : 34880, "state" : "GA" }
+{ "_id" : "30312", "city" : "ATLANTA", "loc" : [ -84.378125, 33.746749 ], "pop" : 17683, "state" : "GA" }
+{ "_id" : "30313", "city" : "ATLANTA", "loc" : [ -84.39352, 33.76825 ], "pop" : 8038, "state" : "GA" }
+{ "_id" : "30314", "city" : "ATLANTA", "loc" : [ -84.425546, 33.756103 ], "pop" : 26649, "state" : "GA" }
+{ "_id" : "30315", "city" : "ATLANTA", "loc" : [ -84.380771, 33.705062 ], "pop" : 41061, "state" : "GA" }
+{ "_id" : "30316", "city" : "ATLANTA", "loc" : [ -84.333913, 33.721686 ], "pop" : 34668, "state" : "GA" }
+{ "_id" : "30317", "city" : "ATLANTA", "loc" : [ -84.31685, 33.749788 ], "pop" : 16395, "state" : "GA" }
+{ "_id" : "30318", "city" : "ATLANTA", "loc" : [ -84.445432, 33.786454 ], "pop" : 53894, "state" : "GA" }
+{ "_id" : "30319", "city" : "ATLANTA", "loc" : [ -84.335091, 33.868728 ], "pop" : 32138, "state" : "GA" }
+{ "_id" : "30324", "city" : "ATLANTA", "loc" : [ -84.354867, 33.820609 ], "pop" : 15044, "state" : "GA" }
+{ "_id" : "30326", "city" : "ATLANTA", "loc" : [ -84.358232, 33.848168 ], "pop" : 125, "state" : "GA" }
+{ "_id" : "30327", "city" : "ATLANTA", "loc" : [ -84.419966, 33.862723 ], "pop" : 18467, "state" : "GA" }
+{ "_id" : "30329", "city" : "ATLANTA", "loc" : [ -84.321402, 33.823555 ], "pop" : 17013, "state" : "GA" }
+Type "it" for more
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate( [ { $match : { $and : [ {city:"ATLANTA"},{state:"GA"}]} } ] ).pretty()
+{
+	"_id" : "30303",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.388846,
+		33.752504
+	],
+	"pop" : 1845,
+	"state" : "GA"
+}
+{
+	"_id" : "30305",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.385145,
+		33.831963
+	],
+	"pop" : 19122,
+	"state" : "GA"
+}
+{
+	"_id" : "30306",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.351418,
+		33.786027
+	],
+	"pop" : 20081,
+	"state" : "GA"
+}
+{
+	"_id" : "30307",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.335957,
+		33.769138
+	],
+	"pop" : 16330,
+	"state" : "GA"
+}
+{
+	"_id" : "30308",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.375744,
+		33.771839
+	],
+	"pop" : 8549,
+	"state" : "GA"
+}
+{
+	"_id" : "30309",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.388338,
+		33.798407
+	],
+	"pop" : 14766,
+	"state" : "GA"
+}
+{
+	"_id" : "30310",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.423173,
+		33.727849
+	],
+	"pop" : 34017,
+	"state" : "GA"
+}
+{
+	"_id" : "30311",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.470219,
+		33.722957
+	],
+	"pop" : 34880,
+	"state" : "GA"
+}
+{
+	"_id" : "30312",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.378125,
+		33.746749
+	],
+	"pop" : 17683,
+	"state" : "GA"
+}
+{
+	"_id" : "30313",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.39352,
+		33.76825
+	],
+	"pop" : 8038,
+	"state" : "GA"
+}
+{
+	"_id" : "30314",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.425546,
+		33.756103
+	],
+	"pop" : 26649,
+	"state" : "GA"
+}
+{
+	"_id" : "30315",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.380771,
+		33.705062
+	],
+	"pop" : 41061,
+	"state" : "GA"
+}
+{
+	"_id" : "30316",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.333913,
+		33.721686
+	],
+	"pop" : 34668,
+	"state" : "GA"
+}
+{
+	"_id" : "30317",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.31685,
+		33.749788
+	],
+	"pop" : 16395,
+	"state" : "GA"
+}
+{
+	"_id" : "30318",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.445432,
+		33.786454
+	],
+	"pop" : 53894,
+	"state" : "GA"
+}
+{
+	"_id" : "30319",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.335091,
+		33.868728
+	],
+	"pop" : 32138,
+	"state" : "GA"
+}
+{
+	"_id" : "30324",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.354867,
+		33.820609
+	],
+	"pop" : 15044,
+	"state" : "GA"
+}
+{
+	"_id" : "30326",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.358232,
+		33.848168
+	],
+	"pop" : 125,
+	"state" : "GA"
+}
+{
+	"_id" : "30327",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.419966,
+		33.862723
+	],
+	"pop" : 18467,
+	"state" : "GA"
+}
+{
+	"_id" : "30329",
+	"city" : "ATLANTA",
+	"loc" : [
+		-84.321402,
+		33.823555
+	],
+	"pop" : 17013,
+	"state" : "GA"
+}
+Type "it" for more
+
+3)use $group to count the number of zip codes in Atlanta
+
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate([ { $match : { city :"ATLANTA"}} ,{ $group: { _id:"city", zipcode:{$sum:1}}}])
+{ "_id" : "city", "zipcode" : 41 }
+
+
+4)use $group to find the total population in Atlanta.
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate([ { $match : { city :"ATLANTA"}} ,{$group : {_id:"$city", population:{$sum : "$pop" }}}])
+
+{ "_id" : "ATLANTA", "population" : 630046 }
+
+5) use aggregate to count total population of each state
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate([ {$group: { _id:"$state" ,TotalPopulation:{$sum:"$pop"}}} ])
+{ "_id" : "VA", "TotalPopulation" : 6181479 }
+{ "_id" : "PA", "TotalPopulation" : 11881643 }
+{ "_id" : "AZ", "TotalPopulation" : 3665228 }
+{ "_id" : "NV", "TotalPopulation" : 1201833 }
+{ "_id" : "NC", "TotalPopulation" : 6628637 }
+{ "_id" : "MD", "TotalPopulation" : 4781379 }
+{ "_id" : "CO", "TotalPopulation" : 3293755 }
+{ "_id" : "NM", "TotalPopulation" : 1515069 }
+{ "_id" : "CA", "TotalPopulation" : 29754890 }
+{ "_id" : "NY", "TotalPopulation" : 17990402 }
+{ "_id" : "MA", "TotalPopulation" : 6016425 }
+{ "_id" : "CT", "TotalPopulation" : 3287116 }
+{ "_id" : "OR", "TotalPopulation" : 2842321 }
+{ "_id" : "WV", "TotalPopulation" : 1793146 }
+{ "_id" : "TX", "TotalPopulation" : 16984601 }
+{ "_id" : "IL", "TotalPopulation" : 11427576 }
+{ "_id" : "IA", "TotalPopulation" : 2776420 }
+{ "_id" : "DE", "TotalPopulation" : 666168 }
+{ "_id" : "MI", "TotalPopulation" : 9295297 }
+{ "_id" : "SC", "TotalPopulation" : 3486703 }
+Type "it" for more
+
+6)sort the result by population,highest first
+
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate([ {$group: { _id:"$state" ,TotalPopulation:{$sum:"$pop"}}} , {$sort : {TotalPopulation:-1}}])
+{ "_id" : "CA", "TotalPopulation" : 29754890 }
+{ "_id" : "NY", "TotalPopulation" : 17990402 }
+{ "_id" : "TX", "TotalPopulation" : 16984601 }
+{ "_id" : "FL", "TotalPopulation" : 12686644 }
+{ "_id" : "PA", "TotalPopulation" : 11881643 }
+{ "_id" : "IL", "TotalPopulation" : 11427576 }
+{ "_id" : "OH", "TotalPopulation" : 10846517 }
+{ "_id" : "MI", "TotalPopulation" : 9295297 }
+{ "_id" : "NJ", "TotalPopulation" : 7730188 }
+{ "_id" : "NC", "TotalPopulation" : 6628637 }
+{ "_id" : "GA", "TotalPopulation" : 6478216 }
+{ "_id" : "VA", "TotalPopulation" : 6181479 }
+{ "_id" : "MA", "TotalPopulation" : 6016425 }
+{ "_id" : "IN", "TotalPopulation" : 5544136 }
+{ "_id" : "MO", "TotalPopulation" : 5110648 }
+{ "_id" : "WI", "TotalPopulation" : 4891769 }
+{ "_id" : "TN", "TotalPopulation" : 4876457 }
+{ "_id" : "WA", "TotalPopulation" : 4866692 }
+{ "_id" : "MD", "TotalPopulation" : 4781379 }
+{ "_id" : "MN", "TotalPopulation" : 4372982 }
+Type "it" for more
+
+
+7)limit the results to just the first 3 results.What are the top 3 states in population?
+ db.zipcodes.aggregate([{$group: {   _id: "$state",   Totalpopulation: {     $sum: "$pop"   } }}, {$sort: {   Totalpopulation: 1 }}, {$limit: 3}])
+{ "_id" : "WY", "Totalpopulation" : 453528 }
+{ "_id" : "AK", "Totalpopulation" : 544698 }
+{ "_id" : "VT", "Totalpopulation" : 562758 }
+
+8)use aggregate to calculate the total population for each city.You can use a combination for the _id of the $group:{city:'$city',state:'$state'}
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate( [{$group: {   _id: {city :"$city", state : "$state"},   Totalpopulation: {     $sum: "$pop"   } }}] )
+
+{ "_id" : { "city" : "TRANSYLVANIA", "state" : "LA" }, "Totalpopulation" : 1067 }
+{ "_id" : { "city" : "CANOE", "state" : "KY" }, "Totalpopulation" : 6384 }
+{ "_id" : { "city" : "PALMYRA", "state" : "NE" }, "Totalpopulation" : 1012 }
+{ "_id" : { "city" : "BIG RIVER", "state" : "CA" }, "Totalpopulation" : 976 }
+{ "_id" : { "city" : "KING WILLIAM", "state" : "VA" }, "Totalpopulation" : 3887 }
+{ "_id" : { "city" : "GROVER", "state" : "WY" }, "Totalpopulation" : 335 }
+{ "_id" : { "city" : "KNIGHTS LANDING", "state" : "CA" }, "Totalpopulation" : 1907 }
+{ "_id" : { "city" : "KAPAAU", "state" : "HI" }, "Totalpopulation" : 2550 }
+{ "_id" : { "city" : "MEDOMAK", "state" : "ME" }, "Totalpopulation" : 540 }
+{ "_id" : { "city" : "WAYNE", "state" : "WV" }, "Totalpopulation" : 4992 }
+{ "_id" : { "city" : "SAN PABLO", "state" : "CA" }, "Totalpopulation" : 47668 }
+{ "_id" : { "city" : "SUMMERHILL", "state" : "PA" }, "Totalpopulation" : 2215 }
+{ "_id" : { "city" : "BARDWELL", "state" : "KY" }, "Totalpopulation" : 1957 }
+{ "_id" : { "city" : "RANDOLPH", "state" : "UT" }, "Totalpopulation" : 682 }
+{ "_id" : { "city" : "MANCOS", "state" : "CO" }, "Totalpopulation" : 2141 }
+{ "_id" : { "city" : "EARLYSVILLE", "state" : "VA" }, "Totalpopulation" : 4294 }
+{ "_id" : { "city" : "SLAUGHTER", "state" : "LA" }, "Totalpopulation" : 4558 }
+{ "_id" : { "city" : "FELT", "state" : "ID" }, "Totalpopulation" : 40 }
+{ "_id" : { "city" : "HARDENVILLE", "state" : "MO" }, "Totalpopulation" : 267 }
+{ "_id" : { "city" : "LINCOLN", "state" : "OH" }, "Totalpopulation" : 16221 }
+Type "it" for more
+
+9)sort the result by population,highest first
+
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate([{$group: {
+...   _id: {city :"$city", state : "$state"},
+...   Totalpopulation: {
+...     $sum: "$pop"
+...   }
+... }}, {$sort: {
+...   Totalpopulation: -1
+... }}])
+
+{ "_id" : { "city" : "CHICAGO", "state" : "IL" }, "Totalpopulation" : 2452177 }
+{ "_id" : { "city" : "BROOKLYN", "state" : "NY" }, "Totalpopulation" : 2300504 }
+{ "_id" : { "city" : "LOS ANGELES", "state" : "CA" }, "Totalpopulation" : 2102295 }
+{ "_id" : { "city" : "HOUSTON", "state" : "TX" }, "Totalpopulation" : 2095918 }
+{ "_id" : { "city" : "PHILADELPHIA", "state" : "PA" }, "Totalpopulation" : 1610956 }
+{ "_id" : { "city" : "NEW YORK", "state" : "NY" }, "Totalpopulation" : 1476790 }
+{ "_id" : { "city" : "BRONX", "state" : "NY" }, "Totalpopulation" : 1209548 }
+{ "_id" : { "city" : "SAN DIEGO", "state" : "CA" }, "Totalpopulation" : 1049298 }
+{ "_id" : { "city" : "DETROIT", "state" : "MI" }, "Totalpopulation" : 963243 }
+{ "_id" : { "city" : "DALLAS", "state" : "TX" }, "Totalpopulation" : 940191 }
+{ "_id" : { "city" : "PHOENIX", "state" : "AZ" }, "Totalpopulation" : 890853 }
+{ "_id" : { "city" : "MIAMI", "state" : "FL" }, "Totalpopulation" : 825232 }
+{ "_id" : { "city" : "SAN JOSE", "state" : "CA" }, "Totalpopulation" : 816653 }
+{ "_id" : { "city" : "SAN ANTONIO", "state" : "TX" }, "Totalpopulation" : 811792 }
+{ "_id" : { "city" : "BALTIMORE", "state" : "MD" }, "Totalpopulation" : 733081 }
+{ "_id" : { "city" : "SAN FRANCISCO", "state" : "CA" }, "Totalpopulation" : 723993 }
+{ "_id" : { "city" : "MEMPHIS", "state" : "TN" }, "Totalpopulation" : 632837 }
+{ "_id" : { "city" : "SACRAMENTO", "state" : "CA" }, "Totalpopulation" : 628279 }
+{ "_id" : { "city" : "JACKSONVILLE", "state" : "FL" }, "Totalpopulation" : 610160 }
+{ "_id" : { "city" : "ATLANTA", "state" : "GA" }, "Totalpopulation" : 609591 }
+Type "it" for more
+
+
+
+10)limit the result to just the first 3 results .what are the top 3 cities in population?
+
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate(
+... [{$group: {
+...   _id: {city :"$city", state : "$state"},
+...   Totalpopulation: {
+...     $sum: "$pop"
+...   }
+... }}, {$sort: {
+...   Totalpopulation: -1
+... }}, {$limit: 3}])
+
+{ "_id" : { "city" : "CHICAGO", "state" : "IL" }, "Totalpopulation" : 2452177 }
+{ "_id" : { "city" : "BROOKLYN", "state" : "NY" }, "Totalpopulation" : 2300504 }
+{ "_id" : { "city" : "LOS ANGELES", "state" : "CA" }, "Totalpopulation" : 2102295 }
+
+
+11)what are the top 3 cities in population in texas?
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate(
+... [{$match: {
+...   state:"TX"
+... }}, {$group: {
+...   _id:{city:"$city", state:"$state"},
+...   Totalpopulation: {
+...     $sum: "$pop"
+...   },
+... 
+...   }}, {$sort: {
+...   Totalpopulation: -1
+... }}, {$limit: 3}])
+
+{ "_id" : { "city" : "HOUSTON", "state" : "TX" }, "Totalpopulation" : 2095918 }
+{ "_id" : { "city" : "DALLAS", "state" : "TX" }, "Totalpopulation" : 940191 }
+{ "_id" : { "city" : "SAN ANTONIO", "state" : "TX" }, "Totalpopulation" : 811792 }
+
+
+12)Write Query to get the average city population for each state.
+
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate([{$group: {
+...   _id:"$state",
+...   AvgPopulation: {
+...     $avg: "$pop"
+...   },
+... 
+...   }}])
+
+{ "_id" : "IA", "AvgPopulation" : 3011.301518438178 }
+{ "_id" : "MS", "AvgPopulation" : 7088.749311294766 }
+{ "_id" : "IL", "AvgPopulation" : 9238.137429264349 }
+{ "_id" : "MI", "AvgPopulation" : 10611.069634703197 }
+{ "_id" : "DE", "AvgPopulation" : 12569.207547169812 }
+{ "_id" : "OH", "AvgPopulation" : 10771.119165839125 }
+{ "_id" : "SC", "AvgPopulation" : 9962.00857142857 }
+{ "_id" : "KY", "AvgPopulation" : 4543.243510506799 }
+{ "_id" : "DC", "AvgPopulation" : 25287.5 }
+{ "_id" : "ID", "AvgPopulation" : 4126.020491803279 }
+{ "_id" : "LA", "AvgPopulation" : 9089.644396551725 }
+{ "_id" : "VA", "AvgPopulation" : 7575.341911764706 }
+{ "_id" : "MD", "AvgPopulation" : 11384.235714285714 }
+{ "_id" : "NC", "AvgPopulation" : 9402.321985815603 }
+{ "_id" : "NM", "AvgPopulation" : 5489.380434782609 }
+{ "_id" : "CO", "AvgPopulation" : 7955.929951690821 }
+{ "_id" : "NY", "AvgPopulation" : 11279.248902821317 }
+{ "_id" : "OR", "AvgPopulation" : 7401.877604166667 }
+{ "_id" : "MA", "AvgPopulation" : 12692.879746835442 }
+{ "_id" : "CT", "AvgPopulation" : 12498.539923954373 }
+
+13)what are the top 3 states in terms of average population?
+
+MongoDB Enterprise atlas-84a0ci-shard-0:PRIMARY> db.zipcodes.aggregate(
+... [{$group: {
+...   _id:"$state",
+...   AvgPopulation: {
+...     $avg: "$pop"
+...   },
+... 
+...   }}, {$sort: {
+...   AvgPopulation: -1
+... }}, {$limit: 3}])
+
+{ "_id" : "DC", "AvgPopulation" : 25287.5 }
+{ "_id" : "CA", "AvgPopulation" : 19627.236147757256 }
+{ "_id" : "FL", "AvgPopulation" : 15779.407960199005 }
+
