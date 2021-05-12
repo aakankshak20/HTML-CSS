@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(8, 8, 8);
+    color: rgb(255, 245, 245);
+    text-align: center;
+}
+
+
+.container{
+    background-color: rgb(19, 18, 18);
+    display: flex;
+    align-items: center;
+}
+
+textarea{
+    height: 50px;
+    resize:horizontal;
+    font-family: Open Sans Condensed;
+}
+
+.btn{
+    left: 50%;
+    top: 110%;
+    padding: 9px;
+    width: 90px;
+    position: absolute;
+    border: 2px solid gray;
+    border-radius: 10%;
+}
+
+fieldset{
+    width: 500px;
+    text-align: center;
+    align-items: center;
+   
+}

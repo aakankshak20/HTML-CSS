@@ -1,0 +1,39 @@
+body,h2,h3{
+    background-color: rgb(17, 17, 17);
+    color: rgb(253, 251, 251);
+    text-align: center;
+}
+
+
+textarea{
+    height: 50px;
+    resize:horizontal;
+    font-family: Open Sans Condensed;
+}
+
+
+.btn{
+    /* left: 50%;
+    top: 110%; */
+    padding: 4px;
+    margin: 9px;
+    width: 90px;
+    position: relative;
+    border: 2px solid gray;
+    border-radius: 10%;
+}
+
+fieldset{
+    width: 500px;
+    margin: 0px auto;
+    border-radius: 5%;   
+}
+
+
+form{
+    background-color:rgb(18, 19, 19);
+    width: 100%;
+    color: rgb(214, 80, 196);
+    text-align: center;
+    
+}

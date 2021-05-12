@@ -1,0 +1,92 @@
+body{
+    color: #ffff;
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    background: burlywood;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: minmax(100px,auto);
+    grid-gap:10px;
+    max-width: 100%; 
+    margin: 0 auto;
+   
+    grid-template-areas: 
+    "header header header header"
+    "section section section section"
+    "aside aside main main"
+    "nav nav nav nav"
+    "footer footer footer footer"
+    ;
+}
+
+header{
+  grid-area: header;
+  background-image: url("img/Leopard.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+main{
+  grid-area: main;
+  background-image: url("img/leopard-factsjpg.jpg");
+  background-repeat: no-repeat;
+}
+section{
+  grid-area: section;
+  display: block;
+  padding: 20px;
+  background: rgb(204, 73, 73);
+  color: aliceblue;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+aside{
+  grid-area: aside;
+  display: block;
+  background:rgb(19, 15, 0);
+  text-align: center;
+  justify-content: center;
+  height: 450px;
+}
+footer{
+  grid-area: footer;
+  background: black;
+}
+nav{
+  grid-area: nav;
+  background: rgb(212, 211, 209);
+  color: black;
+}
+
+a{
+    border: 2px solid white;
+    width: 20%;
+    border-radius: 8%;
+    font-size: 30px;
+    text-decoration: none;
+    color: whitesmoke;
+    top: 80px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+nav ul{
+    list-style-type: square;
+    text-align: left;
+}
+
+footer .info{
+    text-decoration: none;
+    border: none;
+
+}

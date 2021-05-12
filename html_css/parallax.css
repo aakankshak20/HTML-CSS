@@ -1,0 +1,121 @@
+.para1{
+background-image: url("img/india.jpg");
+
+min-height: 500px;
+
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+h2{
+    text-decoration: underline;
+    text-align: center;
+}
+.para2{
+    background-image: url("img/Bangalore.jpg");
+
+    min-height: 500px;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.para3{
+        background-image: url("img/surat_city.jpg");
+        
+        min-height: 500px;
+        
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .para4{
+        background-image: url("img/Hyderabad.jpg");
+    
+        min-height: 500px;
+        
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+.para5{
+        background-image: url("img/Gandhinagar.jpg");
+        
+        min-height: 500px;
+        
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+.para6{
+    background-image: url("img/pune11.jpg");
+    
+    min-height: 500px;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ptext{
+    position: absolute;
+    top:40%;
+    width: 100%;
+    text-align: center;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    background-color: lightgray;
+    /* padding: 3px; */
+    margin:4px 2px;
+
+}
+.section1{
+    border: 3px solid yellowgreen;
+    height: 200px;
+    background-color: rgb(49, 49, 47);
+    font-size: 20px;
+    color: thistle;
+}
+
+.section2{
+    border: 3px solid rgb(196, 228, 131);
+    height: 250px;
+    background-color: rgb(17, 17, 16);
+    font-size: 20px;
+    color: wheat;
+}
+
+.section1 :hover{
+    color:rebeccapurple;
+    background-color: rgb(8, 8, 8);
+}
+
+.section2 :hover{
+    color: rgb(148, 21, 21);
+    background-color: rgb(120, 199, 84);
+}
+
+.para2:hover{
+    opacity:70% ;
+}
+.para3:hover{
+    opacity:70% ;
+}
+.para4:hover{
+    opacity:70% ;
+}
+.para5:hover{
+    opacity:70% ;
+}
+.para6:hover{
+    opacity:70% ;
+}

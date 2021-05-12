@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Survey_Page.css">
+    <title>Survey Form</title>
+</head>
+<body>
+    <h2>Product Survey</h2>
+    <h4>Thank you for taking the time </h4>
+  
+  
+
+      
+             <form>
+                <fieldset>
+                    <h3>Customer Details</h3>
+                    <legend>Personal Information</legend>
+                    <label for= "customernamef">First Name</label>
+                    <input type="text" name="customernamef" id="customernamef" required> <br><br>
+                    <label for= "lcustomername">Last Name</label>
+                    <input type="text" name="customernamel" id="customernamel" required>
+                    <br><br>
+
+                    <label for="dob">Date Of Birth</label>
+                    <input type="date" name="dob" id="dob">
+                    <br><br>
+
+                    <label for="gender">Gender</label><br>
+                    <input type="radio" name="gender" id="gender" value="Male">Male 
+                    <input type="radio" name="gender" id="gender" value="Female">Female
+                    <input type="radio" name="gender" id="gender" value="other">other 
+                    <br><br>
+                    <label for="mail">Enter valid mail</label>
+                    <input type="email" name="mail" id="mail" required> <br><br>
+                    <label for="password">Enter password</label>
+                    <input type="password" name="password" id="password">
+             </fieldset>
+             <br>
+             <fieldset>
+                 <legend>Product Details</legend>
+                    <label for="productname">Please Select Product Name</label>
+                    <select name="productname" id="productname">
+                        <option value="A">Abc</option>
+                        <option value="B">Bcd</option>
+                        <option value="C">Cef</option>
+                        <option value="D">Dgf</option>
+                        <option value="E">Erg</option>
+                        <option value="F">Fig</option>
+                    </select>
+                        <br><br>
+                    <label for="productissue">Please Select Product issue</label> <br>
+                    <input type="checkbox" name="productissue" id="productissue" value="Sound">Sound <br>
+                    <input type="checkbox" name="productissue" id="productissue" value="Working">Working <br>
+                    <input type="checkbox" name="productissue" id="productissue" value="Stability">Stability <br>
+                    <input type="checkbox" name="productissue" id="productissue" value="Performance">Performance <br>
+                    <input type="checkbox" name="productissue" id="productissue" value="Display">Display <br>
+                    <!-- <input type="checkbox" name="productissue" id="productissue" value="None">None <br><br> --> <br>
+                    
+                     <label for="desc">Detail Description</label>
+                    <div class="fields">
+                        <textarea id="desc" name="desc" cols="50" rows="4" placeholder="Enter your Description here..."></textarea>
+            </fieldset>
+                <input type="button" value="Submit" class="btn">
+            </form> 
+           
+</body>
+</html>

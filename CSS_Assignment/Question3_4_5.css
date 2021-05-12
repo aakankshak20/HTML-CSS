@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(175, 233, 213);
+}
+
+#upper_case{
+    text-transform: uppercase;
+}
+
+a:link{
+    color:peru;
+}
+
+a:visited{
+    color: rgb(52, 197, 38);
+}
+
+table,td,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
